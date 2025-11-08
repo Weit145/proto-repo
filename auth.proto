@@ -38,7 +38,7 @@ message CookieResponse {
 }
 
 message CookieRequest {
-    Cookie cookie = 2;
+    string refresh_token = 2;
 }
 
 message AccessTokenResponse {
@@ -58,6 +58,7 @@ message CurrentUserResponse{
     bool is_active = 3;
     bool is_verified = 4;
     string role = 5;
+    Okey response = 6;
 }
 message UserCurrentRequest{
     string username = 1;

@@ -1,0 +1,72 @@
+syntax = "proto3";
+package auth;
+
+message Cookie {
+    string key = 1;
+    string value = 2;
+    bool httponly = 3;
+    bool secure = 4;
+    string samesite = 5;
+    int32 max_age = 6;
+}
+
+
+message UserCreateRequest { 
+    string username = 1;
+    string email = 2;
+    string password = 3;
+}
+
+message UserLoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message TokenRequest {
+    string token_pod = 1;
+}
+
+message Okey {
+    bool success = 1;
+    string error = 2;
+}
+
+message CookieResponse {
+    string access_token = 1;
+    Cookie cookie = 2;
+    Okey response = 3;
+}
+
+message CookieRequest {
+    string access_token = 1;
+    Cookie cookie = 2;
+}
+
+message AccessTokenResponse {
+    string access_token = 1;
+    Okey response = 2;
+}
+
+message OkeyResponse {
+    bool success = 1;
+    string error = 2;
+}
+
+message CurrentUserResponse{
+    int32 id = 1;
+    string username = 2;
+    bool is_active = 3;
+    bool is_verified = 4;
+    string role = 5;
+}
+message UserCurrentRequest{
+    string username = 1;
+}
+
+service Auth{
+    rpc CreateUser(UserCreateRequest) returns (OkeyResponse);
+    rpc RegistrationUser(TokenRequest) returns (CookieResponse);
+    rpc RefreshToken(CookieRequest) returns (AccessTokenResponse);
+    rpc Authenticate(UserLoginRequest) returns (CookieResponse);
+    rpc CurrentUser(UserCurrentRequest) returns (CurrentUserResponse);
+}

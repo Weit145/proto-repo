@@ -38,7 +38,6 @@ message CookieResponse {
 }
 
 message CookieRequest {
-    string access_token = 1;
     Cookie cookie = 2;
 }
 
@@ -49,7 +48,8 @@ message AccessTokenResponse {
 
 message OkeyResponse {
     bool success = 1;
-    string error = 2;
+    int32 status_code = 2;
+    string error = 3;
 }
 
 message CurrentUserResponse{

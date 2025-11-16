@@ -37,7 +37,7 @@ class AuthStub(object):
         self.CreateUser = channel.unary_unary(
                 '/auth.Auth/CreateUser',
                 request_serializer=auth__pb2.UserCreateRequest.SerializeToString,
-                response_deserializer=auth__pb2.OkeyResponse.FromString,
+                response_deserializer=auth__pb2.Okey.FromString,
                 _registered_method=True)
         self.RegistrationUser = channel.unary_unary(
                 '/auth.Auth/RegistrationUser',
@@ -100,7 +100,7 @@ def add_AuthServicer_to_server(servicer, server):
             'CreateUser': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateUser,
                     request_deserializer=auth__pb2.UserCreateRequest.FromString,
-                    response_serializer=auth__pb2.OkeyResponse.SerializeToString,
+                    response_serializer=auth__pb2.Okey.SerializeToString,
             ),
             'RegistrationUser': grpc.unary_unary_rpc_method_handler(
                     servicer.RegistrationUser,
@@ -149,7 +149,7 @@ class Auth(object):
             target,
             '/auth.Auth/CreateUser',
             auth__pb2.UserCreateRequest.SerializeToString,
-            auth__pb2.OkeyResponse.FromString,
+            auth__pb2.Okey.FromString,
             options,
             channel_credentials,
             insecure,

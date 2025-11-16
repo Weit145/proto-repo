@@ -47,11 +47,6 @@ message AccessTokenResponse {
     Okey response = 2;
 }
 
-message OkeyResponse {
-    bool success = 1;
-    int32 status_code = 2;
-    string error = 3;
-}
 
 message CurrentUserResponse{
     int32 id = 1;
@@ -66,7 +61,7 @@ message UserCurrentRequest{
 }
 
 service Auth{
-    rpc CreateUser(UserCreateRequest) returns (OkeyResponse);
+    rpc CreateUser(UserCreateRequest) returns (Okey);
     rpc RegistrationUser(TokenRequest) returns (CookieResponse);
     rpc RefreshToken(CookieRequest) returns (AccessTokenResponse);
     rpc Authenticate(UserLoginRequest) returns (CookieResponse);

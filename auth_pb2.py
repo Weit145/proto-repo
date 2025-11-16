@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nauth.proto\x12\x04\x61uth\"i\n\x06\x43ookie\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x10\n\x08httponly\x18\x03 \x01(\x08\x12\x0e\n\x06secure\x18\x04 \x01(\x08\x12\x10\n\x08samesite\x18\x05 \x01(\t\x12\x0f\n\x07max_age\x18\x06 \x01(\x05\"F\n\x11UserCreateRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"6\n\x10UserLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"!\n\x0cTokenRequest\x12\x11\n\ttoken_pod\x18\x01 \x01(\t\";\n\x04Okey\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x13\n\x0bstatus_code\x18\x02 \x01(\x05\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"b\n\x0e\x43ookieResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x1c\n\x06\x63ookie\x18\x02 \x01(\x0b\x32\x0c.auth.Cookie\x12\x1c\n\x08response\x18\x03 \x01(\x0b\x32\n.auth.Okey\"&\n\rCookieRequest\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\"I\n\x13\x41\x63\x63\x65ssTokenResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x1c\n\x08response\x18\x02 \x01(\x0b\x32\n.auth.Okey\"C\n\x0cOkeyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x13\n\x0bstatus_code\x18\x02 \x01(\x05\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"\x87\x01\n\x13\x43urrentUserResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x11\n\tis_active\x18\x03 \x01(\x08\x12\x13\n\x0bis_verified\x18\x04 \x01(\x08\x12\x0c\n\x04role\x18\x05 \x01(\t\x12\x1c\n\x08response\x18\x06 \x01(\x0b\x32\n.auth.Okey\"&\n\x12UserCurrentRequest\x12\x10\n\x08username\x18\x01 \x01(\t2\xc1\x02\n\x04\x41uth\x12\x39\n\nCreateUser\x12\x17.auth.UserCreateRequest\x1a\x12.auth.OkeyResponse\x12<\n\x10RegistrationUser\x12\x12.auth.TokenRequest\x1a\x14.auth.CookieResponse\x12>\n\x0cRefreshToken\x12\x13.auth.CookieRequest\x1a\x19.auth.AccessTokenResponse\x12<\n\x0c\x41uthenticate\x12\x16.auth.UserLoginRequest\x1a\x14.auth.CookieResponse\x12\x42\n\x0b\x43urrentUser\x12\x18.auth.UserCurrentRequest\x1a\x19.auth.CurrentUserResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nauth.proto\x12\x04\x61uth\"i\n\x06\x43ookie\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x10\n\x08httponly\x18\x03 \x01(\x08\x12\x0e\n\x06secure\x18\x04 \x01(\x08\x12\x10\n\x08samesite\x18\x05 \x01(\t\x12\x0f\n\x07max_age\x18\x06 \x01(\x05\"F\n\x11UserCreateRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"6\n\x10UserLoginRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"!\n\x0cTokenRequest\x12\x11\n\ttoken_pod\x18\x01 \x01(\t\";\n\x04Okey\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x13\n\x0bstatus_code\x18\x02 \x01(\x05\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"b\n\x0e\x43ookieResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x1c\n\x06\x63ookie\x18\x02 \x01(\x0b\x32\x0c.auth.Cookie\x12\x1c\n\x08response\x18\x03 \x01(\x0b\x32\n.auth.Okey\"&\n\rCookieRequest\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\"I\n\x13\x41\x63\x63\x65ssTokenResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x1c\n\x08response\x18\x02 \x01(\x0b\x32\n.auth.Okey\"\x87\x01\n\x13\x43urrentUserResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x11\n\tis_active\x18\x03 \x01(\x08\x12\x13\n\x0bis_verified\x18\x04 \x01(\x08\x12\x0c\n\x04role\x18\x05 \x01(\t\x12\x1c\n\x08response\x18\x06 \x01(\x0b\x32\n.auth.Okey\"&\n\x12UserCurrentRequest\x12\x10\n\x08username\x18\x01 \x01(\t2\xb9\x02\n\x04\x41uth\x12\x31\n\nCreateUser\x12\x17.auth.UserCreateRequest\x1a\n.auth.Okey\x12<\n\x10RegistrationUser\x12\x12.auth.TokenRequest\x1a\x14.auth.CookieResponse\x12>\n\x0cRefreshToken\x12\x13.auth.CookieRequest\x1a\x19.auth.AccessTokenResponse\x12<\n\x0c\x41uthenticate\x12\x16.auth.UserLoginRequest\x1a\x14.auth.CookieResponse\x12\x42\n\x0b\x43urrentUser\x12\x18.auth.UserCurrentRequest\x1a\x19.auth.CurrentUserResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,12 +47,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COOKIEREQUEST']._serialized_end=489
   _globals['_ACCESSTOKENRESPONSE']._serialized_start=491
   _globals['_ACCESSTOKENRESPONSE']._serialized_end=564
-  _globals['_OKEYRESPONSE']._serialized_start=566
-  _globals['_OKEYRESPONSE']._serialized_end=633
-  _globals['_CURRENTUSERRESPONSE']._serialized_start=636
-  _globals['_CURRENTUSERRESPONSE']._serialized_end=771
-  _globals['_USERCURRENTREQUEST']._serialized_start=773
-  _globals['_USERCURRENTREQUEST']._serialized_end=811
-  _globals['_AUTH']._serialized_start=814
-  _globals['_AUTH']._serialized_end=1135
+  _globals['_CURRENTUSERRESPONSE']._serialized_start=567
+  _globals['_CURRENTUSERRESPONSE']._serialized_end=702
+  _globals['_USERCURRENTREQUEST']._serialized_start=704
+  _globals['_USERCURRENTREQUEST']._serialized_end=742
+  _globals['_AUTH']._serialized_start=745
+  _globals['_AUTH']._serialized_end=1058
 # @@protoc_insertion_point(module_scope)

@@ -29,14 +29,11 @@ message TokenRequest {
 
 message Okey {
     bool success = 1;
-    int32 status_code = 2;
-    string error = 3;
 }
 
 message CookieResponse {
     string access_token = 1;
     Cookie cookie = 2;
-    Okey response = 3;
 }
 
 message CookieRequest {
@@ -45,7 +42,6 @@ message CookieRequest {
 
 message AccessTokenResponse {
     string access_token = 1;
-    Okey response = 2;
 }
 
 
@@ -55,7 +51,6 @@ message CurrentUserResponse{
     bool is_active = 3;
     bool is_verified = 4;
     string role = 5;
-    Okey response = 6;
 }
 message UserCurrentRequest{
     string access_token = 1;

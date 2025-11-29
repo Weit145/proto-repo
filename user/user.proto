@@ -22,7 +22,7 @@ message UserOutResponse{
 message Empty{}
 
 service User{
-    rpc ReadUser(UserDeleteRequest) returns (Empty);
+    rpc DeleteUser(UserDeleteRequest) returns (Empty);
     rpc GetUser(UserGetRequest) returns (UserOutResponse);
     rpc UserUpdate(UserUpdateRequest) returns (UserOutResponse);
 }

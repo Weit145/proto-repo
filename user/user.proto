@@ -1,0 +1,28 @@
+syntax = "proto3";
+package user;
+
+message UserDeleteRequest{
+    int32 id = 1;
+}
+
+message UserGetRequest{
+    int32 id = 1;
+}
+
+message UserUpdateRequest{
+    int32 id = 1;
+    string username = 2;
+}
+
+
+message UserOutResponse{
+    string username = 1;
+}
+
+message Empty{}
+
+service User{
+    rpc ReadUser(UserDeleteRequest) returns (Empty);
+    rpc GetUser(UserGetRequest) returns (UserOutResponse);
+    rpc UserUpdate(UserUpdateRequest) returns (UserOutResponse);
+}

@@ -58,7 +58,7 @@ message CurrentUserResponse{
     Okey response = 6;
 }
 message UserCurrentRequest{
-    string login = 1;
+    string access_token = 1;
 }
 
 service Auth{

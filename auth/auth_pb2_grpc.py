@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import auth_pb2 as auth__pb2
+from auth import auth_pb2 as auth_dot_auth__pb2
 
 GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in auth_pb2_grpc.py depends on'
+        + ' but the generated code in auth/auth_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -36,28 +36,28 @@ class AuthStub(object):
         """
         self.CreateUser = channel.unary_unary(
                 '/auth.Auth/CreateUser',
-                request_serializer=auth__pb2.UserCreateRequest.SerializeToString,
-                response_deserializer=auth__pb2.Okey.FromString,
+                request_serializer=auth_dot_auth__pb2.UserCreateRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.Okey.FromString,
                 _registered_method=True)
         self.RegistrationUser = channel.unary_unary(
                 '/auth.Auth/RegistrationUser',
-                request_serializer=auth__pb2.TokenRequest.SerializeToString,
-                response_deserializer=auth__pb2.CookieResponse.FromString,
+                request_serializer=auth_dot_auth__pb2.TokenRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.CookieResponse.FromString,
                 _registered_method=True)
         self.RefreshToken = channel.unary_unary(
                 '/auth.Auth/RefreshToken',
-                request_serializer=auth__pb2.CookieRequest.SerializeToString,
-                response_deserializer=auth__pb2.AccessTokenResponse.FromString,
+                request_serializer=auth_dot_auth__pb2.CookieRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.AccessTokenResponse.FromString,
                 _registered_method=True)
         self.Authenticate = channel.unary_unary(
                 '/auth.Auth/Authenticate',
-                request_serializer=auth__pb2.UserLoginRequest.SerializeToString,
-                response_deserializer=auth__pb2.CookieResponse.FromString,
+                request_serializer=auth_dot_auth__pb2.UserLoginRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.CookieResponse.FromString,
                 _registered_method=True)
         self.CurrentUser = channel.unary_unary(
                 '/auth.Auth/CurrentUser',
-                request_serializer=auth__pb2.UserCurrentRequest.SerializeToString,
-                response_deserializer=auth__pb2.CurrentUserResponse.FromString,
+                request_serializer=auth_dot_auth__pb2.UserCurrentRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.CurrentUserResponse.FromString,
                 _registered_method=True)
 
 
@@ -99,28 +99,28 @@ def add_AuthServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateUser': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateUser,
-                    request_deserializer=auth__pb2.UserCreateRequest.FromString,
-                    response_serializer=auth__pb2.Okey.SerializeToString,
+                    request_deserializer=auth_dot_auth__pb2.UserCreateRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.Okey.SerializeToString,
             ),
             'RegistrationUser': grpc.unary_unary_rpc_method_handler(
                     servicer.RegistrationUser,
-                    request_deserializer=auth__pb2.TokenRequest.FromString,
-                    response_serializer=auth__pb2.CookieResponse.SerializeToString,
+                    request_deserializer=auth_dot_auth__pb2.TokenRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.CookieResponse.SerializeToString,
             ),
             'RefreshToken': grpc.unary_unary_rpc_method_handler(
                     servicer.RefreshToken,
-                    request_deserializer=auth__pb2.CookieRequest.FromString,
-                    response_serializer=auth__pb2.AccessTokenResponse.SerializeToString,
+                    request_deserializer=auth_dot_auth__pb2.CookieRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.AccessTokenResponse.SerializeToString,
             ),
             'Authenticate': grpc.unary_unary_rpc_method_handler(
                     servicer.Authenticate,
-                    request_deserializer=auth__pb2.UserLoginRequest.FromString,
-                    response_serializer=auth__pb2.CookieResponse.SerializeToString,
+                    request_deserializer=auth_dot_auth__pb2.UserLoginRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.CookieResponse.SerializeToString,
             ),
             'CurrentUser': grpc.unary_unary_rpc_method_handler(
                     servicer.CurrentUser,
-                    request_deserializer=auth__pb2.UserCurrentRequest.FromString,
-                    response_serializer=auth__pb2.CurrentUserResponse.SerializeToString,
+                    request_deserializer=auth_dot_auth__pb2.UserCurrentRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.CurrentUserResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -148,8 +148,8 @@ class Auth(object):
             request,
             target,
             '/auth.Auth/CreateUser',
-            auth__pb2.UserCreateRequest.SerializeToString,
-            auth__pb2.Okey.FromString,
+            auth_dot_auth__pb2.UserCreateRequest.SerializeToString,
+            auth_dot_auth__pb2.Okey.FromString,
             options,
             channel_credentials,
             insecure,
@@ -175,8 +175,8 @@ class Auth(object):
             request,
             target,
             '/auth.Auth/RegistrationUser',
-            auth__pb2.TokenRequest.SerializeToString,
-            auth__pb2.CookieResponse.FromString,
+            auth_dot_auth__pb2.TokenRequest.SerializeToString,
+            auth_dot_auth__pb2.CookieResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -202,8 +202,8 @@ class Auth(object):
             request,
             target,
             '/auth.Auth/RefreshToken',
-            auth__pb2.CookieRequest.SerializeToString,
-            auth__pb2.AccessTokenResponse.FromString,
+            auth_dot_auth__pb2.CookieRequest.SerializeToString,
+            auth_dot_auth__pb2.AccessTokenResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -229,8 +229,8 @@ class Auth(object):
             request,
             target,
             '/auth.Auth/Authenticate',
-            auth__pb2.UserLoginRequest.SerializeToString,
-            auth__pb2.CookieResponse.FromString,
+            auth_dot_auth__pb2.UserLoginRequest.SerializeToString,
+            auth_dot_auth__pb2.CookieResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -256,8 +256,8 @@ class Auth(object):
             request,
             target,
             '/auth.Auth/CurrentUser',
-            auth__pb2.UserCurrentRequest.SerializeToString,
-            auth__pb2.CurrentUserResponse.FromString,
+            auth_dot_auth__pb2.UserCurrentRequest.SerializeToString,
+            auth_dot_auth__pb2.CurrentUserResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -12,13 +12,14 @@ message Cookie {
 
 
 message UserCreateRequest { 
-    string username = 1;
+    string login = 1;
     string email = 2;
     string password = 3;
+    string username = 4;
 }
 
 message UserLoginRequest {
-    string username = 1;
+    string login = 1;
     string password = 2;
 }
 
@@ -50,14 +51,14 @@ message AccessTokenResponse {
 
 message CurrentUserResponse{
     int32 id = 1;
-    string username = 2;
+    string login = 2;
     bool is_active = 3;
     bool is_verified = 4;
     string role = 5;
     Okey response = 6;
 }
 message UserCurrentRequest{
-    string username = 1;
+    string login = 1;
 }
 
 service Auth{

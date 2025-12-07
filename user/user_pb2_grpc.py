@@ -34,8 +34,8 @@ class UserStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.ReadUser = channel.unary_unary(
-                '/user.User/ReadUser',
+        self.DeleteUser = channel.unary_unary(
+                '/user.User/DeleteUser',
                 request_serializer=user_dot_user__pb2.UserDeleteRequest.SerializeToString,
                 response_deserializer=user_dot_user__pb2.Empty.FromString,
                 _registered_method=True)
@@ -54,7 +54,7 @@ class UserStub(object):
 class UserServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def ReadUser(self, request, context):
+    def DeleteUser(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -75,8 +75,8 @@ class UserServicer(object):
 
 def add_UserServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'ReadUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReadUser,
+            'DeleteUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteUser,
                     request_deserializer=user_dot_user__pb2.UserDeleteRequest.FromString,
                     response_serializer=user_dot_user__pb2.Empty.SerializeToString,
             ),
@@ -102,7 +102,7 @@ class User(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def ReadUser(request,
+    def DeleteUser(request,
             target,
             options=(),
             channel_credentials=None,
@@ -115,7 +115,7 @@ class User(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user.User/ReadUser',
+            '/user.User/DeleteUser',
             user_dot_user__pb2.UserDeleteRequest.SerializeToString,
             user_dot_user__pb2.Empty.FromString,
             options,

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fuser/user.proto\x12\x04user\"\x1f\n\x11UserDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\x1c\n\x0eUserGetRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"1\n\x11UserUpdateRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08username\x18\x02 \x01(\t\"#\n\x0fUserOutResponse\x12\x10\n\x08username\x18\x01 \x01(\t\"\x07\n\x05\x45mpty2\xae\x01\n\x04User\x12\x30\n\x08ReadUser\x12\x17.user.UserDeleteRequest\x1a\x0b.user.Empty\x12\x36\n\x07GetUser\x12\x14.user.UserGetRequest\x1a\x15.user.UserOutResponse\x12<\n\nUserUpdate\x12\x17.user.UserUpdateRequest\x1a\x15.user.UserOutResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fuser/user.proto\x12\x04user\"\x1f\n\x11UserDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\x1c\n\x0eUserGetRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"1\n\x11UserUpdateRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08username\x18\x02 \x01(\t\"#\n\x0fUserOutResponse\x12\x10\n\x08username\x18\x01 \x01(\t\"\x07\n\x05\x45mpty2\xb0\x01\n\x04User\x12\x32\n\nDeleteUser\x12\x17.user.UserDeleteRequest\x1a\x0b.user.Empty\x12\x36\n\x07GetUser\x12\x14.user.UserGetRequest\x1a\x15.user.UserOutResponse\x12<\n\nUserUpdate\x12\x17.user.UserUpdateRequest\x1a\x15.user.UserOutResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,5 +42,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EMPTY']._serialized_start=176
   _globals['_EMPTY']._serialized_end=183
   _globals['_USER']._serialized_start=186
-  _globals['_USER']._serialized_end=360
+  _globals['_USER']._serialized_end=362
 # @@protoc_insertion_point(module_scope)

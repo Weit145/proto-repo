@@ -56,7 +56,7 @@ class PostStub(object):
                 _registered_method=True)
         self.GetByAuthPost = channel.unary_unary(
                 '/post.Post/GetByAuthPost',
-                request_serializer=post_dot_post__pb2.PostGetByAuthRequest.SerializeToString,
+                request_serializer=post_dot_post__pb2.PostGetByUsernameRequest.SerializeToString,
                 response_deserializer=post_dot_post__pb2.PostOutResponse.FromString,
                 _registered_method=True)
         self.PutPost = channel.unary_unary(
@@ -130,7 +130,7 @@ def add_PostServicer_to_server(servicer, server):
             ),
             'GetByAuthPost': grpc.unary_unary_rpc_method_handler(
                     servicer.GetByAuthPost,
-                    request_deserializer=post_dot_post__pb2.PostGetByAuthRequest.FromString,
+                    request_deserializer=post_dot_post__pb2.PostGetByUsernameRequest.FromString,
                     response_serializer=post_dot_post__pb2.PostOutResponse.SerializeToString,
             ),
             'PutPost': grpc.unary_unary_rpc_method_handler(
@@ -272,7 +272,7 @@ class Post(object):
             request,
             target,
             '/post.Post/GetByAuthPost',
-            post_dot_post__pb2.PostGetByAuthRequest.SerializeToString,
+            post_dot_post__pb2.PostGetByUsernameRequest.SerializeToString,
             post_dot_post__pb2.PostOutResponse.FromString,
             options,
             channel_credentials,

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fpost/post.proto\x12\x04post\"A\n\x11PostCreateRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\"5\n\x11PostDeleteRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05\"\'\n\x13PostGetGroupRequest\x12\x10\n\x08group_id\x18\x01 \x01(\x05\"%\n\x12PostGetByIdRequest\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\"\'\n\x14PostGetByAuthRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\">\n\x0ePostPutRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\"\x07\n\x05\x45mpty\"?\n\x0fPostOutResponse\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\"8\n\x10PostListResponse\x12$\n\x05posts\x18\x01 \x03(\x0b\x32\x15.post.PostOutResponse2\xf7\x02\n\x04Post\x12<\n\nCreatePost\x12\x17.post.PostCreateRequest\x1a\x15.post.PostOutResponse\x12\x32\n\nDeletePost\x12\x17.post.PostDeleteRequest\x1a\x0b.post.Empty\x12\x41\n\x0cGetGroupPost\x12\x19.post.PostGetGroupRequest\x1a\x16.post.PostListResponse\x12>\n\x0bGetByIdPost\x12\x18.post.PostGetByIdRequest\x1a\x15.post.PostOutResponse\x12\x42\n\rGetByAuthPost\x12\x1a.post.PostGetByAuthRequest\x1a\x15.post.PostOutResponse\x12\x36\n\x07PutPost\x12\x14.post.PostPutRequest\x1a\x15.post.PostOutResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fpost/post.proto\x12\x04post\"A\n\x11PostCreateRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\"5\n\x11PostDeleteRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05\"\'\n\x13PostGetGroupRequest\x12\x10\n\x08group_id\x18\x01 \x01(\x05\"%\n\x12PostGetByIdRequest\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\",\n\x18PostGetByUsernameRequest\x12\x10\n\x08username\x18\x01 \x01(\t\"O\n\x0ePostPutRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\"\x07\n\x05\x45mpty\"Q\n\x0fPostOutResponse\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\"8\n\x10PostListResponse\x12$\n\x05posts\x18\x01 \x03(\x0b\x32\x15.post.PostOutResponse2\xfb\x02\n\x04Post\x12<\n\nCreatePost\x12\x17.post.PostCreateRequest\x1a\x15.post.PostOutResponse\x12\x32\n\nDeletePost\x12\x17.post.PostDeleteRequest\x1a\x0b.post.Empty\x12\x41\n\x0cGetGroupPost\x12\x19.post.PostGetGroupRequest\x1a\x16.post.PostListResponse\x12>\n\x0bGetByIdPost\x12\x18.post.PostGetByIdRequest\x1a\x15.post.PostOutResponse\x12\x46\n\rGetByAuthPost\x12\x1e.post.PostGetByUsernameRequest\x1a\x15.post.PostOutResponse\x12\x36\n\x07PutPost\x12\x14.post.PostPutRequest\x1a\x15.post.PostOutResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,16 +39,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POSTGETGROUPREQUEST']._serialized_end=186
   _globals['_POSTGETBYIDREQUEST']._serialized_start=188
   _globals['_POSTGETBYIDREQUEST']._serialized_end=225
-  _globals['_POSTGETBYAUTHREQUEST']._serialized_start=227
-  _globals['_POSTGETBYAUTHREQUEST']._serialized_end=266
-  _globals['_POSTPUTREQUEST']._serialized_start=268
-  _globals['_POSTPUTREQUEST']._serialized_end=330
-  _globals['_EMPTY']._serialized_start=332
-  _globals['_EMPTY']._serialized_end=339
-  _globals['_POSTOUTRESPONSE']._serialized_start=341
-  _globals['_POSTOUTRESPONSE']._serialized_end=404
-  _globals['_POSTLISTRESPONSE']._serialized_start=406
-  _globals['_POSTLISTRESPONSE']._serialized_end=462
-  _globals['_POST']._serialized_start=465
-  _globals['_POST']._serialized_end=840
+  _globals['_POSTGETBYUSERNAMEREQUEST']._serialized_start=227
+  _globals['_POSTGETBYUSERNAMEREQUEST']._serialized_end=271
+  _globals['_POSTPUTREQUEST']._serialized_start=273
+  _globals['_POSTPUTREQUEST']._serialized_end=352
+  _globals['_EMPTY']._serialized_start=354
+  _globals['_EMPTY']._serialized_end=361
+  _globals['_POSTOUTRESPONSE']._serialized_start=363
+  _globals['_POSTOUTRESPONSE']._serialized_end=444
+  _globals['_POSTLISTRESPONSE']._serialized_start=446
+  _globals['_POSTLISTRESPONSE']._serialized_end=502
+  _globals['_POST']._serialized_start=505
+  _globals['_POST']._serialized_end=884
 # @@protoc_insertion_point(module_scope)

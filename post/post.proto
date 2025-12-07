@@ -21,14 +21,15 @@ message PostGetByIdRequest{
     int32 post_id = 1;
 }
 
-message PostGetByAuthRequest{
-    int32 auth_id = 1;
+message PostGetByUsernameRequest{
+    string username = 1;
 }
 
 message PostPutRequest{
     int32 auth_id = 1;
-    string title = 2;
-    string body = 3;
+    int32 post_id = 2;
+    string title = 3;
+    string body = 4;
 }
 
 
@@ -40,6 +41,7 @@ message PostOutResponse{
     int32 post_id = 1;
     string title = 2;
     string body = 3;
+    string username = 4;
 }
 
 message PostListResponse {
@@ -51,6 +53,6 @@ service Post{
     rpc DeletePost(PostDeleteRequest) returns (Empty);
     rpc GetGroupPost(PostGetGroupRequest) returns (PostListResponse);
     rpc GetByIdPost(PostGetByIdRequest) returns (PostOutResponse);
-    rpc GetByAuthPost(PostGetByAuthRequest) returns (PostOutResponse);
+    rpc GetByAuthPost(PostGetByUsernameRequest) returns (PostOutResponse);
     rpc PutPost(PostPutRequest) returns (PostOutResponse);
 }

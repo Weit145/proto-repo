@@ -1,0 +1,56 @@
+syntax = "proto3";
+package post;
+
+
+message PostCreateRequest{
+    int32 auth_id = 1;
+    string title = 2;
+    string body = 3;
+}
+
+message PostDeleteRequest{
+    int32 auth_id = 1;
+    int32 post_id = 2;
+}
+
+message PostGetGroupRequest{
+    int32 group_id = 1;
+}
+
+message PostGetByIdRequest{
+    int32 post_id = 1;
+}
+
+message PostGetByAuthRequest{
+    int32 auth_id = 1;
+}
+
+message PostPutRequest{
+    int32 auth_id = 1;
+    string title = 2;
+    string body = 3;
+}
+
+
+
+
+message Empty{}
+
+message PostOutResponse{
+    int32 post_id = 1;
+    string title = 2;
+    string body = 3;
+}
+
+message PostListResponse {
+    repeated PostOutResponse posts = 1;
+}
+
+service Post{
+    rpc CreatePost(PostCreateRequest) returns (PostOutResponse);
+    rpc DeletePost(PostDeleteRequest) returns (Empty);
+    rpc GetGroupPost(PostGetGroupRequest) returns (PostListResponse);
+    rpc GetByIdPost(PostGetByIdRequest) returns (PostOutResponse);
+    rpc GetByAuthPost(PostGetByAuthRequest) returns (PostOutResponse);
+    rpc PutPost(PostPutRequest) returns (PostOutResponse);
+}

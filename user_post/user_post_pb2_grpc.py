@@ -44,6 +44,11 @@ class UserPostStub(object):
                 request_serializer=user__post_dot_user__post__pb2.GetByIdRequest.SerializeToString,
                 response_deserializer=user__post_dot_user__post__pb2.UserUsername.FromString,
                 _registered_method=True)
+        self.GetByIDs = channel.unary_unary(
+                '/user_post.UserPost/GetByIDs',
+                request_serializer=user__post_dot_user__post__pb2.GetByIdsRequest.SerializeToString,
+                response_deserializer=user__post_dot_user__post__pb2.UsersMapResponse.FromString,
+                _registered_method=True)
 
 
 class UserPostServicer(object):
@@ -61,6 +66,12 @@ class UserPostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetByIDs(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_UserPostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -73,6 +84,11 @@ def add_UserPostServicer_to_server(servicer, server):
                     servicer.GetByID,
                     request_deserializer=user__post_dot_user__post__pb2.GetByIdRequest.FromString,
                     response_serializer=user__post_dot_user__post__pb2.UserUsername.SerializeToString,
+            ),
+            'GetByIDs': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByIDs,
+                    request_deserializer=user__post_dot_user__post__pb2.GetByIdsRequest.FromString,
+                    response_serializer=user__post_dot_user__post__pb2.UsersMapResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -129,6 +145,33 @@ class UserPost(object):
             '/user_post.UserPost/GetByID',
             user__post_dot_user__post__pb2.GetByIdRequest.SerializeToString,
             user__post_dot_user__post__pb2.UserUsername.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetByIDs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/user_post.UserPost/GetByIDs',
+            user__post_dot_user__post__pb2.GetByIdsRequest.SerializeToString,
+            user__post_dot_user__post__pb2.UsersMapResponse.FromString,
             options,
             channel_credentials,
             insecure,

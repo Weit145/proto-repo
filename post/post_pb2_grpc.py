@@ -54,10 +54,10 @@ class PostStub(object):
                 request_serializer=post_dot_post__pb2.PostGetByIdRequest.SerializeToString,
                 response_deserializer=post_dot_post__pb2.PostOutResponse.FromString,
                 _registered_method=True)
-        self.GetByAuthPost = channel.unary_unary(
-                '/post.Post/GetByAuthPost',
+        self.GetByUsernamePost = channel.unary_unary(
+                '/post.Post/GetByUsernamePost',
                 request_serializer=post_dot_post__pb2.PostGetByUsernameRequest.SerializeToString,
-                response_deserializer=post_dot_post__pb2.PostOutResponse.FromString,
+                response_deserializer=post_dot_post__pb2.PostListResponse.FromString,
                 _registered_method=True)
         self.PutPost = channel.unary_unary(
                 '/post.Post/PutPost',
@@ -93,7 +93,7 @@ class PostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetByAuthPost(self, request, context):
+    def GetByUsernamePost(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -128,10 +128,10 @@ def add_PostServicer_to_server(servicer, server):
                     request_deserializer=post_dot_post__pb2.PostGetByIdRequest.FromString,
                     response_serializer=post_dot_post__pb2.PostOutResponse.SerializeToString,
             ),
-            'GetByAuthPost': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetByAuthPost,
+            'GetByUsernamePost': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByUsernamePost,
                     request_deserializer=post_dot_post__pb2.PostGetByUsernameRequest.FromString,
-                    response_serializer=post_dot_post__pb2.PostOutResponse.SerializeToString,
+                    response_serializer=post_dot_post__pb2.PostListResponse.SerializeToString,
             ),
             'PutPost': grpc.unary_unary_rpc_method_handler(
                     servicer.PutPost,
@@ -258,7 +258,7 @@ class Post(object):
             _registered_method=True)
 
     @staticmethod
-    def GetByAuthPost(request,
+    def GetByUsernamePost(request,
             target,
             options=(),
             channel_credentials=None,
@@ -271,9 +271,9 @@ class Post(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/post.Post/GetByAuthPost',
+            '/post.Post/GetByUsernamePost',
             post_dot_post__pb2.PostGetByUsernameRequest.SerializeToString,
-            post_dot_post__pb2.PostOutResponse.FromString,
+            post_dot_post__pb2.PostListResponse.FromString,
             options,
             channel_credentials,
             insecure,

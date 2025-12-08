@@ -14,7 +14,8 @@ message PostDeleteRequest{
 }
 
 message PostGetGroupRequest{
-    int32 group_id = 1;
+    int32 limit = 1;
+    int32 last_id = 2;
 }
 
 message PostGetByIdRequest{

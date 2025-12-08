@@ -9,6 +9,9 @@ message GetByIdRequest{
     int32 id = 1;
 }
 
+message GetByIdsRequest{
+    repeated int32 ids = 1;
+}
 
 
 
@@ -20,8 +23,13 @@ message UserUsername{
     string username = 1;
 }
 
+message UsersMapResponse {
+    map<int32, string> users = 1;  
+}
+
 
 service UserPost{
     rpc GetByUsername(GetByUsernameRequest) returns (UserId);
     rpc GetByID(GetByIdRequest) returns (UserUsername);
+    rpc GetByIDs(GetByIdsRequest) returns (UsersMapResponse);
 }

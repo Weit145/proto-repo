@@ -53,6 +53,6 @@ service Post{
     rpc DeletePost(PostDeleteRequest) returns (Empty);
     rpc GetGroupPost(PostGetGroupRequest) returns (PostListResponse);
     rpc GetByIdPost(PostGetByIdRequest) returns (PostOutResponse);
-    rpc GetByAuthPost(PostGetByUsernameRequest) returns (PostOutResponse);
+    rpc GetByUsernamePost(PostGetByUsernameRequest) returns (PostListResponse);
     rpc PutPost(PostPutRequest) returns (PostOutResponse);
 }

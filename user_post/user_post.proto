@@ -1,0 +1,27 @@
+syntax = "proto3";
+package user_post;
+
+message GetByUsernameRequest{
+    string username = 1;
+}
+
+message GetByIdRequest{
+    int32 id = 1;
+}
+
+
+
+
+message UserId{
+    int32 id = 1;
+}
+
+message UserUsername{
+    string username = 1;
+}
+
+
+service UserPost{
+    rpc GetByUsername(GetByUsernameRequest) returns (UserId);
+    rpc GetByID(GetByIdRequest) returns (UserUsername);
+}

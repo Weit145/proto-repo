@@ -59,6 +59,11 @@ class AuthStub(object):
                 request_serializer=auth_dot_auth__pb2.UserCurrentRequest.SerializeToString,
                 response_deserializer=auth_dot_auth__pb2.CurrentUserResponse.FromString,
                 _registered_method=True)
+        self.LogOutUser = channel.unary_unary(
+                '/auth.Auth/LogOutUser',
+                request_serializer=auth_dot_auth__pb2.TokenRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class AuthServicer(object):
@@ -94,6 +99,12 @@ class AuthServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def LogOutUser(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AuthServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -121,6 +132,11 @@ def add_AuthServicer_to_server(servicer, server):
                     servicer.CurrentUser,
                     request_deserializer=auth_dot_auth__pb2.UserCurrentRequest.FromString,
                     response_serializer=auth_dot_auth__pb2.CurrentUserResponse.SerializeToString,
+            ),
+            'LogOutUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.LogOutUser,
+                    request_deserializer=auth_dot_auth__pb2.TokenRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -258,6 +274,33 @@ class Auth(object):
             '/auth.Auth/CurrentUser',
             auth_dot_auth__pb2.UserCurrentRequest.SerializeToString,
             auth_dot_auth__pb2.CurrentUserResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def LogOutUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/auth.Auth/LogOutUser',
+            auth_dot_auth__pb2.TokenRequest.SerializeToString,
+            auth_dot_auth__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,

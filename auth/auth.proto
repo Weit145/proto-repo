@@ -27,6 +27,7 @@ message TokenRequest {
     string token_pod = 1;
 }
 
+
 message Okey {
     bool success = 1;
 }
@@ -56,10 +57,13 @@ message UserCurrentRequest{
     string access_token = 1;
 }
 
+message Empty{}
+
 service Auth{
     rpc CreateUser(UserCreateRequest) returns (Okey);
     rpc RegistrationUser(TokenRequest) returns (CookieResponse);
     rpc RefreshToken(CookieRequest) returns (AccessTokenResponse);
     rpc Authenticate(UserLoginRequest) returns (CookieResponse);
     rpc CurrentUser(UserCurrentRequest) returns (CurrentUserResponse);
+    rpc LogOutUser(TokenRequest) returns (Empty);
 }

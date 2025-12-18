@@ -22,7 +22,7 @@ message PostGetByIdRequest{
     int32 post_id = 1;
 }
 
-message PostGetByUsernameRequest{
+message PostGetByIdUserRequest{
     string username = 1;
     int32 auth_id = 2;
 }
@@ -55,6 +55,6 @@ service Post{
     rpc DeletePost(PostDeleteRequest) returns (Empty);
     rpc GetGroupPost(PostGetGroupRequest) returns (PostListResponse);
     rpc GetByIdPost(PostGetByIdRequest) returns (PostOutResponse);
-    rpc GetByUsernamePost(PostGetByUsernameRequest) returns (PostListResponse);
+    rpc GetByIdUserPost(PostGetByIdUserRequest) returns (PostListResponse);
     rpc PutPost(PostPutRequest) returns (PostOutResponse);
 }

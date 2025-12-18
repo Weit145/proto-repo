@@ -54,9 +54,9 @@ class PostStub(object):
                 request_serializer=post_dot_post__pb2.PostGetByIdRequest.SerializeToString,
                 response_deserializer=post_dot_post__pb2.PostOutResponse.FromString,
                 _registered_method=True)
-        self.GetByUsernamePost = channel.unary_unary(
-                '/post.Post/GetByUsernamePost',
-                request_serializer=post_dot_post__pb2.PostGetByUsernameRequest.SerializeToString,
+        self.GetByIdUserPost = channel.unary_unary(
+                '/post.Post/GetByIdUserPost',
+                request_serializer=post_dot_post__pb2.PostGetByIdUserRequest.SerializeToString,
                 response_deserializer=post_dot_post__pb2.PostListResponse.FromString,
                 _registered_method=True)
         self.PutPost = channel.unary_unary(
@@ -93,7 +93,7 @@ class PostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetByUsernamePost(self, request, context):
+    def GetByIdUserPost(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -128,9 +128,9 @@ def add_PostServicer_to_server(servicer, server):
                     request_deserializer=post_dot_post__pb2.PostGetByIdRequest.FromString,
                     response_serializer=post_dot_post__pb2.PostOutResponse.SerializeToString,
             ),
-            'GetByUsernamePost': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetByUsernamePost,
-                    request_deserializer=post_dot_post__pb2.PostGetByUsernameRequest.FromString,
+            'GetByIdUserPost': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByIdUserPost,
+                    request_deserializer=post_dot_post__pb2.PostGetByIdUserRequest.FromString,
                     response_serializer=post_dot_post__pb2.PostListResponse.SerializeToString,
             ),
             'PutPost': grpc.unary_unary_rpc_method_handler(
@@ -258,7 +258,7 @@ class Post(object):
             _registered_method=True)
 
     @staticmethod
-    def GetByUsernamePost(request,
+    def GetByIdUserPost(request,
             target,
             options=(),
             channel_credentials=None,
@@ -271,8 +271,8 @@ class Post(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/post.Post/GetByUsernamePost',
-            post_dot_post__pb2.PostGetByUsernameRequest.SerializeToString,
+            '/post.Post/GetByIdUserPost',
+            post_dot_post__pb2.PostGetByIdUserRequest.SerializeToString,
             post_dot_post__pb2.PostListResponse.FromString,
             options,
             channel_credentials,

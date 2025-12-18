@@ -24,6 +24,7 @@ message PostGetByIdRequest{
 
 message PostGetByUsernameRequest{
     string username = 1;
+    int32 auth_id = 2;
 }
 
 message PostPutRequest{

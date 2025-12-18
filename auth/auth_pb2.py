@@ -4,55 +4,52 @@
 # source: auth/auth.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
+
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
+
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC,
-    6,
-    31,
-    1,
-    '',
-    'auth/auth.proto'
+    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "auth/auth.proto"
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-
-
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61uth/auth.proto\x12\x04\x61uth\"i\n\x06\x43ookie\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x10\n\x08httponly\x18\x03 \x01(\x08\x12\x0e\n\x06secure\x18\x04 \x01(\x08\x12\x10\n\x08samesite\x18\x05 \x01(\t\x12\x0f\n\x07max_age\x18\x06 \x01(\x05\"U\n\x11UserCreateRequest\x12\r\n\x05login\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\"3\n\x10UserLoginRequest\x12\r\n\x05login\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"!\n\x0cTokenRequest\x12\x11\n\ttoken_pod\x18\x01 \x01(\t\"\x17\n\x04Okey\x12\x0f\n\x07success\x18\x01 \x01(\x08\"D\n\x0e\x43ookieResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x1c\n\x06\x63ookie\x18\x02 \x01(\x0b\x32\x0c.auth.Cookie\"&\n\rCookieRequest\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\"+\n\x13\x41\x63\x63\x65ssTokenResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\"f\n\x13\x43urrentUserResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05login\x18\x02 \x01(\t\x12\x11\n\tis_active\x18\x03 \x01(\x08\x12\x13\n\x0bis_verified\x18\x04 \x01(\x08\x12\x0c\n\x04role\x18\x05 \x01(\t\"*\n\x12UserCurrentRequest\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\"\x07\n\x05\x45mpty2\xe8\x02\n\x04\x41uth\x12\x31\n\nCreateUser\x12\x17.auth.UserCreateRequest\x1a\n.auth.Okey\x12<\n\x10RegistrationUser\x12\x12.auth.TokenRequest\x1a\x14.auth.CookieResponse\x12>\n\x0cRefreshToken\x12\x13.auth.CookieRequest\x1a\x19.auth.AccessTokenResponse\x12<\n\x0c\x41uthenticate\x12\x16.auth.UserLoginRequest\x1a\x14.auth.CookieResponse\x12\x42\n\x0b\x43urrentUser\x12\x18.auth.UserCurrentRequest\x1a\x19.auth.CurrentUserResponse\x12-\n\nLogOutUser\x12\x12.auth.TokenRequest\x1a\x0b.auth.Emptyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n\x0f\x61uth/auth.proto\x12\x04\x61uth"i\n\x06\x43ookie\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x10\n\x08httponly\x18\x03 \x01(\x08\x12\x0e\n\x06secure\x18\x04 \x01(\x08\x12\x10\n\x08samesite\x18\x05 \x01(\t\x12\x0f\n\x07max_age\x18\x06 \x01(\x05"U\n\x11UserCreateRequest\x12\r\n\x05login\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t"3\n\x10UserLoginRequest\x12\r\n\x05login\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t"!\n\x0cTokenRequest\x12\x11\n\ttoken_pod\x18\x01 \x01(\t"\x17\n\x04Okey\x12\x0f\n\x07success\x18\x01 \x01(\x08"D\n\x0e\x43ookieResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x1c\n\x06\x63ookie\x18\x02 \x01(\x0b\x32\x0c.auth.Cookie"&\n\rCookieRequest\x12\x15\n\rrefresh_token\x18\x02 \x01(\t"+\n\x13\x41\x63\x63\x65ssTokenResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t"f\n\x13\x43urrentUserResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05login\x18\x02 \x01(\t\x12\x11\n\tis_active\x18\x03 \x01(\x08\x12\x13\n\x0bis_verified\x18\x04 \x01(\x08\x12\x0c\n\x04role\x18\x05 \x01(\t"*\n\x12UserCurrentRequest\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t"\x07\n\x05\x45mpty2\xe8\x02\n\x04\x41uth\x12\x31\n\nCreateUser\x12\x17.auth.UserCreateRequest\x1a\n.auth.Okey\x12<\n\x10RegistrationUser\x12\x12.auth.TokenRequest\x1a\x14.auth.CookieResponse\x12>\n\x0cRefreshToken\x12\x13.auth.CookieRequest\x1a\x19.auth.AccessTokenResponse\x12<\n\x0c\x41uthenticate\x12\x16.auth.UserLoginRequest\x1a\x14.auth.CookieResponse\x12\x42\n\x0b\x43urrentUser\x12\x18.auth.UserCurrentRequest\x1a\x19.auth.CurrentUserResponse\x12-\n\nLogOutUser\x12\x12.auth.TokenRequest\x1a\x0b.auth.Emptyb\x06proto3'
+)
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'auth.auth_pb2', _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "auth.auth_pb2", _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
-  _globals['_COOKIE']._serialized_start=25
-  _globals['_COOKIE']._serialized_end=130
-  _globals['_USERCREATEREQUEST']._serialized_start=132
-  _globals['_USERCREATEREQUEST']._serialized_end=217
-  _globals['_USERLOGINREQUEST']._serialized_start=219
-  _globals['_USERLOGINREQUEST']._serialized_end=270
-  _globals['_TOKENREQUEST']._serialized_start=272
-  _globals['_TOKENREQUEST']._serialized_end=305
-  _globals['_OKEY']._serialized_start=307
-  _globals['_OKEY']._serialized_end=330
-  _globals['_COOKIERESPONSE']._serialized_start=332
-  _globals['_COOKIERESPONSE']._serialized_end=400
-  _globals['_COOKIEREQUEST']._serialized_start=402
-  _globals['_COOKIEREQUEST']._serialized_end=440
-  _globals['_ACCESSTOKENRESPONSE']._serialized_start=442
-  _globals['_ACCESSTOKENRESPONSE']._serialized_end=485
-  _globals['_CURRENTUSERRESPONSE']._serialized_start=487
-  _globals['_CURRENTUSERRESPONSE']._serialized_end=589
-  _globals['_USERCURRENTREQUEST']._serialized_start=591
-  _globals['_USERCURRENTREQUEST']._serialized_end=633
-  _globals['_EMPTY']._serialized_start=635
-  _globals['_EMPTY']._serialized_end=642
-  _globals['_AUTH']._serialized_start=645
-  _globals['_AUTH']._serialized_end=1005
+    DESCRIPTOR._loaded_options = None
+    _globals["_COOKIE"]._serialized_start = 25
+    _globals["_COOKIE"]._serialized_end = 130
+    _globals["_USERCREATEREQUEST"]._serialized_start = 132
+    _globals["_USERCREATEREQUEST"]._serialized_end = 217
+    _globals["_USERLOGINREQUEST"]._serialized_start = 219
+    _globals["_USERLOGINREQUEST"]._serialized_end = 270
+    _globals["_TOKENREQUEST"]._serialized_start = 272
+    _globals["_TOKENREQUEST"]._serialized_end = 305
+    _globals["_OKEY"]._serialized_start = 307
+    _globals["_OKEY"]._serialized_end = 330
+    _globals["_COOKIERESPONSE"]._serialized_start = 332
+    _globals["_COOKIERESPONSE"]._serialized_end = 400
+    _globals["_COOKIEREQUEST"]._serialized_start = 402
+    _globals["_COOKIEREQUEST"]._serialized_end = 440
+    _globals["_ACCESSTOKENRESPONSE"]._serialized_start = 442
+    _globals["_ACCESSTOKENRESPONSE"]._serialized_end = 485
+    _globals["_CURRENTUSERRESPONSE"]._serialized_start = 487
+    _globals["_CURRENTUSERRESPONSE"]._serialized_end = 589
+    _globals["_USERCURRENTREQUEST"]._serialized_start = 591
+    _globals["_USERCURRENTREQUEST"]._serialized_end = 633
+    _globals["_EMPTY"]._serialized_start = 635
+    _globals["_EMPTY"]._serialized_end = 642
+    _globals["_AUTH"]._serialized_start = 645
+    _globals["_AUTH"]._serialized_end = 1005
 # @@protoc_insertion_point(module_scope)

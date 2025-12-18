@@ -4,49 +4,46 @@
 # source: user_post/user_post.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
+
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
+
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC,
-    6,
-    31,
-    1,
-    '',
-    'user_post/user_post.proto'
+    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "user_post/user_post.proto"
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-
-
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19user_post/user_post.proto\x12\tuser_post\"(\n\x14GetByUsernameRequest\x12\x10\n\x08username\x18\x01 \x01(\t\"\x1c\n\x0eGetByIdRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\x1e\n\x0fGetByIdsRequest\x12\x0b\n\x03ids\x18\x01 \x03(\x05\"\x14\n\x06UserId\x12\n\n\x02id\x18\x01 \x01(\x05\" \n\x0cUserUsername\x12\x10\n\x08username\x18\x01 \x01(\t\"w\n\x10UsersMapResponse\x12\x35\n\x05users\x18\x01 \x03(\x0b\x32&.user_post.UsersMapResponse.UsersEntry\x1a,\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\xd3\x01\n\x08UserPost\x12\x43\n\rGetByUsername\x12\x1f.user_post.GetByUsernameRequest\x1a\x11.user_post.UserId\x12=\n\x07GetByID\x12\x19.user_post.GetByIdRequest\x1a\x17.user_post.UserUsername\x12\x43\n\x08GetByIDs\x12\x1a.user_post.GetByIdsRequest\x1a\x1b.user_post.UsersMapResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n\x19user_post/user_post.proto\x12\tuser_post"(\n\x14GetByUsernameRequest\x12\x10\n\x08username\x18\x01 \x01(\t"\x1c\n\x0eGetByIdRequest\x12\n\n\x02id\x18\x01 \x01(\x05"\x1e\n\x0fGetByIdsRequest\x12\x0b\n\x03ids\x18\x01 \x03(\x05"\x14\n\x06UserId\x12\n\n\x02id\x18\x01 \x01(\x05" \n\x0cUserUsername\x12\x10\n\x08username\x18\x01 \x01(\t"w\n\x10UsersMapResponse\x12\x35\n\x05users\x18\x01 \x03(\x0b\x32&.user_post.UsersMapResponse.UsersEntry\x1a,\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\xd3\x01\n\x08UserPost\x12\x43\n\rGetByUsername\x12\x1f.user_post.GetByUsernameRequest\x1a\x11.user_post.UserId\x12=\n\x07GetByID\x12\x19.user_post.GetByIdRequest\x1a\x17.user_post.UserUsername\x12\x43\n\x08GetByIDs\x12\x1a.user_post.GetByIdsRequest\x1a\x1b.user_post.UsersMapResponseb\x06proto3'
+)
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'user_post.user_post_pb2', _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "user_post.user_post_pb2", _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
-  _globals['_USERSMAPRESPONSE_USERSENTRY']._loaded_options = None
-  _globals['_USERSMAPRESPONSE_USERSENTRY']._serialized_options = b'8\001'
-  _globals['_GETBYUSERNAMEREQUEST']._serialized_start=40
-  _globals['_GETBYUSERNAMEREQUEST']._serialized_end=80
-  _globals['_GETBYIDREQUEST']._serialized_start=82
-  _globals['_GETBYIDREQUEST']._serialized_end=110
-  _globals['_GETBYIDSREQUEST']._serialized_start=112
-  _globals['_GETBYIDSREQUEST']._serialized_end=142
-  _globals['_USERID']._serialized_start=144
-  _globals['_USERID']._serialized_end=164
-  _globals['_USERUSERNAME']._serialized_start=166
-  _globals['_USERUSERNAME']._serialized_end=198
-  _globals['_USERSMAPRESPONSE']._serialized_start=200
-  _globals['_USERSMAPRESPONSE']._serialized_end=319
-  _globals['_USERSMAPRESPONSE_USERSENTRY']._serialized_start=275
-  _globals['_USERSMAPRESPONSE_USERSENTRY']._serialized_end=319
-  _globals['_USERPOST']._serialized_start=322
-  _globals['_USERPOST']._serialized_end=533
+    DESCRIPTOR._loaded_options = None
+    _globals["_USERSMAPRESPONSE_USERSENTRY"]._loaded_options = None
+    _globals["_USERSMAPRESPONSE_USERSENTRY"]._serialized_options = b"8\001"
+    _globals["_GETBYUSERNAMEREQUEST"]._serialized_start = 40
+    _globals["_GETBYUSERNAMEREQUEST"]._serialized_end = 80
+    _globals["_GETBYIDREQUEST"]._serialized_start = 82
+    _globals["_GETBYIDREQUEST"]._serialized_end = 110
+    _globals["_GETBYIDSREQUEST"]._serialized_start = 112
+    _globals["_GETBYIDSREQUEST"]._serialized_end = 142
+    _globals["_USERID"]._serialized_start = 144
+    _globals["_USERID"]._serialized_end = 164
+    _globals["_USERUSERNAME"]._serialized_start = 166
+    _globals["_USERUSERNAME"]._serialized_end = 198
+    _globals["_USERSMAPRESPONSE"]._serialized_start = 200
+    _globals["_USERSMAPRESPONSE"]._serialized_end = 319
+    _globals["_USERSMAPRESPONSE_USERSENTRY"]._serialized_start = 275
+    _globals["_USERSMAPRESPONSE_USERSENTRY"]._serialized_end = 319
+    _globals["_USERPOST"]._serialized_start = 322
+    _globals["_USERPOST"]._serialized_end = 533
 # @@protoc_insertion_point(module_scope)

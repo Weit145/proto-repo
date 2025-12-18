@@ -4,51 +4,48 @@
 # source: post/post.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
+
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
+
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC,
-    6,
-    31,
-    1,
-    '',
-    'post/post.proto'
+    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "post/post.proto"
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-
-
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fpost/post.proto\x12\x04post\"A\n\x11PostCreateRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\"5\n\x11PostDeleteRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05\"5\n\x13PostGetGroupRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\x12\x0f\n\x07last_id\x18\x02 \x01(\x05\"%\n\x12PostGetByIdRequest\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\";\n\x16PostGetByIdUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05\"O\n\x0ePostPutRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\"\x07\n\x05\x45mpty\"Q\n\x0fPostOutResponse\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\"8\n\x10PostListResponse\x12$\n\x05posts\x18\x01 \x03(\x0b\x32\x15.post.PostOutResponse2\xfc\x02\n\x04Post\x12<\n\nCreatePost\x12\x17.post.PostCreateRequest\x1a\x15.post.PostOutResponse\x12\x32\n\nDeletePost\x12\x17.post.PostDeleteRequest\x1a\x0b.post.Empty\x12\x41\n\x0cGetGroupPost\x12\x19.post.PostGetGroupRequest\x1a\x16.post.PostListResponse\x12>\n\x0bGetByIdPost\x12\x18.post.PostGetByIdRequest\x1a\x15.post.PostOutResponse\x12G\n\x0fGetByIdUserPost\x12\x1c.post.PostGetByIdUserRequest\x1a\x16.post.PostListResponse\x12\x36\n\x07PutPost\x12\x14.post.PostPutRequest\x1a\x15.post.PostOutResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n\x0fpost/post.proto\x12\x04post"A\n\x11PostCreateRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t"5\n\x11PostDeleteRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05"5\n\x13PostGetGroupRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\x12\x0f\n\x07last_id\x18\x02 \x01(\x05"%\n\x12PostGetByIdRequest\x12\x0f\n\x07post_id\x18\x01 \x01(\x05";\n\x16PostGetByIdUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x61uth_id\x18\x02 \x01(\x05"O\n\x0ePostPutRequest\x12\x0f\n\x07\x61uth_id\x18\x01 \x01(\x05\x12\x0f\n\x07post_id\x18\x02 \x01(\x05\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t"\x07\n\x05\x45mpty"Q\n\x0fPostOutResponse\x12\x0f\n\x07post_id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t"8\n\x10PostListResponse\x12$\n\x05posts\x18\x01 \x03(\x0b\x32\x15.post.PostOutResponse2\xfc\x02\n\x04Post\x12<\n\nCreatePost\x12\x17.post.PostCreateRequest\x1a\x15.post.PostOutResponse\x12\x32\n\nDeletePost\x12\x17.post.PostDeleteRequest\x1a\x0b.post.Empty\x12\x41\n\x0cGetGroupPost\x12\x19.post.PostGetGroupRequest\x1a\x16.post.PostListResponse\x12>\n\x0bGetByIdPost\x12\x18.post.PostGetByIdRequest\x1a\x15.post.PostOutResponse\x12G\n\x0fGetByIdUserPost\x12\x1c.post.PostGetByIdUserRequest\x1a\x16.post.PostListResponse\x12\x36\n\x07PutPost\x12\x14.post.PostPutRequest\x1a\x15.post.PostOutResponseb\x06proto3'
+)
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'post.post_pb2', _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "post.post_pb2", _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
-  _globals['_POSTCREATEREQUEST']._serialized_start=25
-  _globals['_POSTCREATEREQUEST']._serialized_end=90
-  _globals['_POSTDELETEREQUEST']._serialized_start=92
-  _globals['_POSTDELETEREQUEST']._serialized_end=145
-  _globals['_POSTGETGROUPREQUEST']._serialized_start=147
-  _globals['_POSTGETGROUPREQUEST']._serialized_end=200
-  _globals['_POSTGETBYIDREQUEST']._serialized_start=202
-  _globals['_POSTGETBYIDREQUEST']._serialized_end=239
-  _globals['_POSTGETBYIDUSERREQUEST']._serialized_start=241
-  _globals['_POSTGETBYIDUSERREQUEST']._serialized_end=300
-  _globals['_POSTPUTREQUEST']._serialized_start=302
-  _globals['_POSTPUTREQUEST']._serialized_end=381
-  _globals['_EMPTY']._serialized_start=383
-  _globals['_EMPTY']._serialized_end=390
-  _globals['_POSTOUTRESPONSE']._serialized_start=392
-  _globals['_POSTOUTRESPONSE']._serialized_end=473
-  _globals['_POSTLISTRESPONSE']._serialized_start=475
-  _globals['_POSTLISTRESPONSE']._serialized_end=531
-  _globals['_POST']._serialized_start=534
-  _globals['_POST']._serialized_end=914
+    DESCRIPTOR._loaded_options = None
+    _globals["_POSTCREATEREQUEST"]._serialized_start = 25
+    _globals["_POSTCREATEREQUEST"]._serialized_end = 90
+    _globals["_POSTDELETEREQUEST"]._serialized_start = 92
+    _globals["_POSTDELETEREQUEST"]._serialized_end = 145
+    _globals["_POSTGETGROUPREQUEST"]._serialized_start = 147
+    _globals["_POSTGETGROUPREQUEST"]._serialized_end = 200
+    _globals["_POSTGETBYIDREQUEST"]._serialized_start = 202
+    _globals["_POSTGETBYIDREQUEST"]._serialized_end = 239
+    _globals["_POSTGETBYIDUSERREQUEST"]._serialized_start = 241
+    _globals["_POSTGETBYIDUSERREQUEST"]._serialized_end = 300
+    _globals["_POSTPUTREQUEST"]._serialized_start = 302
+    _globals["_POSTPUTREQUEST"]._serialized_end = 381
+    _globals["_EMPTY"]._serialized_start = 383
+    _globals["_EMPTY"]._serialized_end = 390
+    _globals["_POSTOUTRESPONSE"]._serialized_start = 392
+    _globals["_POSTOUTRESPONSE"]._serialized_end = 473
+    _globals["_POSTLISTRESPONSE"]._serialized_start = 475
+    _globals["_POSTLISTRESPONSE"]._serialized_end = 531
+    _globals["_POST"]._serialized_start = 534
+    _globals["_POST"]._serialized_end = 914
 # @@protoc_insertion_point(module_scope)

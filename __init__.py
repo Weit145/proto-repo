@@ -23,5 +23,5 @@ from post import post_pb2_grpc
 from user_post import user_post_pb2
 from user_post import user_post_pb2_grpc
 
-from admin import admin_pb2
-from admin import admin_pb2_grpc
+from proto.admin import admin_pb2
+from proto.admin import admin_pb2_grpc

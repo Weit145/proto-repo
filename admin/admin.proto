@@ -1,0 +1,22 @@
+syntax = "proto3";
+package admin;
+
+message DeletePostRequest{
+    int32 post_id = 1;
+}
+
+message DeleteUserRequest{
+    int32 user_id = 1;
+}
+
+message BanUserRequest{
+    int32 user_id = 1;
+}
+
+message Empty{}
+
+service Admin{
+    rpc DeletePost(DeletePostRequest) returns (Empty);
+    rpc DeleteUser(DeleteUserRequest) returns (Empty);
+    rpc BanUser(BanUserRequest) returns (Empty);
+}

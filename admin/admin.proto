@@ -1,6 +1,9 @@
 syntax = "proto3";
 package admin;
 
+option go_package = "github.com/Weit145/proto-repo/admin;admin";
+
+
 message DeletePostRequest{
     int32 post_id = 1;
 }
